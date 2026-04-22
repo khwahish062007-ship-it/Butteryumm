@@ -1,0 +1,554 @@
+/* =============== RESET =============== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background: #fffdf5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* =============== NAVBAR =============== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #fff8dc;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffb300;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(-2deg);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #ffb300;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* =============== HOME =============== */
+.home-section {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tagline {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #ffb300;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* =============== GENERAL SECTION =============== */
+.section {
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ff9800;
+}
+
+/* =============== BUTTONS =============== */
+.btn {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #ffb300;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ffa000;
+    transform: scale(1.05);
+}
+
+/* =============== STEPS =============== */
+.step {
+    margin-top: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Circular cards */
+.options div {
+    width: 120px;
+    height: 120px;
+    background: #fff3cd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.options div:hover {
+    background: #ffe082;
+    transform: scale(1.1);
+}
+
+/* =============== MENU =============== */
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+.tab.active {
+    background: #ffb300;
+    color: white;
+}
+
+.menu-content {
+    display: none;
+}
+
+.menu-content.active {
+    display: block;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.menu-item {
+    background: #fff8e1;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item button {
+    margin-top: 10px;
+}
+
+/* =============== DESSERTS =============== */
+.dessert-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+}
+
+.dessert-item {
+    text-align: center;
+}
+
+.dessert-circle {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    background: #fff3cd;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.dessert-circle:hover {
+    transform: scale(1.1);
+    background: #e7c45c;
+}
+
+/* =============== CONTACT =============== */
+.contact p {
+    margin: 10px 0;
+}
+
+.whatsapp-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #25D366;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* =============== CART =============== */
+.cart {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 280px;
+    background: #cd9f09;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    cursor: move;
+}
+
+.cart h3 {
+    margin-bottom: 10px;
+}
+
+#cart-items {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.cart-total {
+    margin-top: 10px;
+}
+
+/* =============== POPUPS =============== */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff8e1;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 2000;
+}
+
+/* =============== RESPONSIVE =============== */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .dessert-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cart {
+        width: 90%;
+        right: 5%;
+    }
+}
+/* FIX HERO SECTION */
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #fff7e6, #fdecc8);
+    position: relative;
+}
+
+.hero {
+    text-align: center;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 70px;
+    font-family: 'Playfair Display', cursive;
+    color: #2d1f0f;
+}
+
+.hero h1 span {
+    color: #e76f3c;
+    font-style: italic;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #8c7a5b;
+}
+
+.hero button {
+    margin-top: 30px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 40px;
+    background: #f4b400;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.butter-icon {
+    width: 60px;
+    margin-bottom: 20px;
+}
+/* NAVBAR STYLING UPGRADE */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #fff8e7;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav ul li {
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+nav ul li:hover {
+    background: #f4b400;
+    color: black;
+    transform: translateY(-2px);
+}
+
+/* Active Tab (highlighted one) */
+nav ul li.active {
+    background: #f4b400;
+    color: black;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(244,180,0,0.4);
+}
+/* BUTTER SPLASH EFFECT */
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #f4b400;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Splash Layer */
+.logo::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, #ffd84d 20%, #f4b400 60%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+/* Hover = SPLASH */
+.logo:hover::after {
+    width: 200px;
+    height: 200px;
+    opacity: 0.6;
+}
+/* CONTAINER */
+/* STAGE */
+.butter-stage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* CHARACTER BASE */
+.butter {
+    position: absolute;
+    width: 90px;
+    height: 120px;
+    animation: drift 12s infinite ease-in-out;
+}
+
+/* BODY */
+.body {
+    width: 90px;
+    height: 75px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffe066, #f4b400);
+    position: relative;
+    box-shadow:
+        inset -8px -8px 15px rgba(0,0,0,0.2),
+        inset 5px 5px 10px rgba(255,255,255,0.3);
+}
+
+/* SHINE (3D LOOK) */
+.shine {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    top: 10px;
+    left: 15px;
+    filter: blur(2px);
+}
+
+/* EYES */
+.eyes {
+    position: absolute;
+    top: 25px;
+    left: 22px;
+    display: flex;
+    gap: 12px;
+}
+
+.eyes span {
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    animation: blink 4s infinite;
+}
+
+/* BLINK */
+@keyframes blink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.1); }
+}
+
+/* SMILE */
+.smile {
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+    width: 35px;
+    height: 18px;
+    border-bottom: 3px solid black;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* ARM */
+.arm {
+    position: absolute;
+    right: -12px;
+    top: 30px;
+    width: 18px;
+    height: 6px;
+    background: #f4b400;
+    border-radius: 6px;
+    transform-origin: left;
+}
+
+/* SKATE */
+.skate {
+    width: 100px;
+    height: 10px;
+    background: #d89b00;
+    border-radius: 10px;
+    margin-top: 6px;
+    animation: bounce 1s infinite alternate;
+}
+
+/* BOUNCE */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(4px); }
+}
+
+/* DRIFT MOTION */
+@keyframes drift {
+    0% { transform: translate(0,0); }
+    25% { transform: translate(80px,-40px); }
+    50% { transform: translate(-60px,50px); }
+    75% { transform: translate(40px,-30px); }
+    100% { transform: translate(0,0); }
+}
+
+/* POSITIONS */
+.char1 { top: 20%; left: 10%; }
+.char2 { top: 65%; left: 75%; }
+.char3 { top: 45%; left: 40%; }
+
+/* HOVER INTERACTION */
+.butter:hover .arm {
+    animation: wave 0.3s infinite alternate;
+}
+
+.butter:hover .smile {
+    border-bottom: 5px solid black;
+}
+
+/* WAVE */
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(50deg); }
+}
+.hero {
+    position: relative;
+    z-index: 2;
+}

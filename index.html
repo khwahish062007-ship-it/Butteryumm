@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butter Yum</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="navbar">
+        <div class="logo">Butter Yum</div>
+
+        <nav>
+            <ul>
+            <li onclick="showSection('build-meal')">Build Meal</li>
+            <li class="active" onclick="showSection('ready-menus')">Ready Menus</li>
+            <li onclick="showSection('desserts')">Desserts</li>
+            <li onclick="showSection('contact')">Contact</li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+    <section class="home">
+    <div class="hero">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" class="butter-icon">
+
+        <h1>
+            It’s so <span>yum,</span><br>yum
+        </h1>
+
+        <p>
+            Crafted with butter, served with love. Mumbai's most indulgent food.
+        </p>
+
+        <button onclick="scrollToSection('build-meal')">
+            🍽️ Build Your Meal
+        </button>
+    </div>
+</section>
+<div class="butter-stage">
+
+    <!-- CHARACTER -->
+    <div class="butter char1">
+        <div class="body">
+            <div class="shine"></div>
+            <div class="eyes">
+                <span></span><span></span>
+            </div>
+            <div class="smile"></div>
+            <div class="arm"></div>
+        </div>
+        <div class="skate"></div>
+    </div>
+
+    <div class="butter char2">
+        <div class="body">
+            <div class="shine"></div>
+            <div class="eyes">
+                <span></span><span></span>
+            </div>
+            <div class="smile"></div>
+            <div class="arm"></div>
+        </div>
+        <div class="skate"></div>
+    </div>
+
+    <div class="butter char3">
+        <div class="body">
+            <div class="shine"></div>
+            <div class="eyes">
+                <span></span><span></span>
+            </div>
+            <div class="smile"></div>
+            <div class="arm"></div>
+        </div>
+        <div class="skate"></div>
+    </div>
+
+</div>
+
+
+    <!-- ================= BUILD MEAL ================= -->
+    <section id="build-meal" class="section">
+        <h2>Build Your Meal</h2>
+
+        <!-- Step 1 -->
+        <div class="step" id="category-step">
+            <h3>Select Category</h3>
+            <button class="btn category" data-type="veg">Veg</button>
+            <button class="btn category" data-type="nonveg">Non-Veg</button>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step hidden" id="protein-step">
+            <h3>Select Protein</h3>
+            <div class="options" id="protein-options"></div>
+        </div>
+
+        <!-- Dynamic Steps -->
+        <div id="dynamic-steps"></div>
+
+        <!-- Confirmation -->
+        <div id="confirmation-popup" class="popup hidden">
+            <p>Your order has been confirmed. Thank you for choosing Butter Yum!</p>
+        </div>
+    </section>
+
+
+    <!-- ================= READY MENUS ================= -->
+    <section id="ready-menus" class="section">
+        <h2>Ready Menus</h2>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="veg-menu">Veg</button>
+            <button class="tab" data-tab="nonveg-menu">Non-Veg</button>
+        </div>
+
+        <!-- Veg Menu -->
+        <div id="veg-menu" class="menu-content active">
+            <h3>Healthy</h3>
+            <div class="menu-grid" id="veg-healthy"></div>
+
+            <h3>Unhealthy</h3>
+            <div class="menu-grid" id="veg-unhealthy"></div>
+        </div>
+
+        <!-- Non-Veg Menu -->
+        <div id="nonveg-menu" class="menu-content">
+            <h3>Healthy</h3>
+            <div class="menu-grid" id="nonveg-healthy"></div>
+
+            <h3>Unhealthy</h3>
+            <div class="menu-grid" id="nonveg-unhealthy"></div>
+        </div>
+    </section>
+
+
+    <!-- ================= DESSERTS ================= -->
+    <section id="desserts" class="section">
+        <h2>Desserts</h2>
+        <div id="desserts" class="menu-grid"></div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section contact">
+        <h2>Butter Yum</h2>
+        <p class="tagline">It’s so yum, yum</p>
+
+        <p>📞 +91 98765 43210</p>
+        <p>📧 contact@butteryum.com</p>
+        <p>📍 Mumbai, India</p>
+
+        <button class="whatsapp-btn">Order via WhatsApp</button>
+    </section>
+
+
+    <!-- ================= CART ================= -->
+    <div id="cart" class="cart">
+        <h3>Your Order</h3>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-total">
+            <strong>Total: ₹<span id="total-price">0</span></strong>
+        </div>
+
+        <button id="checkout-btn">Confirm Order</button>
+    </div>
+
+
+    <!-- ================= PAYMENT POPUP ================= -->
+    <div id="payment-popup" class="popup hidden">
+        <span class="close-btn" id="close-payment">&times;</span>
+        <h3>Select Payment Method</h3>
+        <button class="payment">Paytm</button>
+        <button class="payment">Cash on Delivery</button>
+    </div>
+
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+<div id="overlay" class="hidden"></div>
+</body>
+</html>
